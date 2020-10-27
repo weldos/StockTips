@@ -4,6 +4,13 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import { Container } from "react-bootstrap";
+
+// Redux Imports
+import { Provider } from "react-redux";
+import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import store from "./store";
+import rrfProps from "./config/rrfProps";
 
 // Import Custom Components
 import Home from './components/Home'
@@ -31,28 +38,35 @@ const Styles = styled.div`
 
 function App() {
   return (
-    <Fragment>
-      <NavigationBar />
-      <Jumbotron />
-      <Styles>
-      <Layout>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <Fragment>
         <Router>
-          <Switch>
-            <Route exact path='/' component={Home}></Route>
-            <Route exact path='/signup' component={Newsletter}></Route>
-            <Route exact path='/status' component={Status}></Route>
-            <Route exact path='/contact' component={Email}></Route>
-            <Route exact path='/text' component={Sms}></Route>
-            <Route exact path='/register' component={Register}></Route>
-            <Route component={NotFound}></Route>
-          </Switch>
-        </Router>
-      </Layout>
-      <br />
-      <br />
-      <Footer /> 
-      </Styles>
-    </Fragment>
+          <NavigationBar />
+          <Jumbotron />
+          <Styles>
+          <Layout>
+            
+              <Container>
+                <Switch>
+                  <Route exact path='/' component={Home}></Route>
+                  <Route exact path='/signup' component={Newsletter}></Route>
+                  <Route exact path='/status' component={Status}></Route>
+                  <Route exact path='/contact' component={Email}></Route>
+                  <Route exact path='/text' component={Sms}></Route>
+                  <Route exact path='/register' component={Register}></Route>
+                  <Route component={NotFound}></Route>
+                </Switch>
+              </Container>
+          </Layout>
+          <br />
+          <br />
+          <Footer /> 
+          </Styles>
+          </Router>
+        </Fragment>
+    </ReactReduxFirebaseProvider>
+    </Provider>
     
   );
 }
