@@ -49,6 +49,11 @@ const Users = ({ users }) => {
               <FontAwesomeIcon icon={faUsers} size="lg" /> Users
             </H2>
           </Col>
+          <Col md={6}>
+            <Link to="/users/register" className="btn btn-success btn-block">
+              Register new user!
+            </Link>
+          </Col>
         </Row>
         <Table striped>
           <thead className="thead-inverse">

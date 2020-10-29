@@ -1,7 +1,7 @@
 // This is an App for my business
 
 //importing react components and installed modules
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from "react-bootstrap";
@@ -23,11 +23,11 @@ import Register from './components/users/Register';
 import Users from './components/users/Users'
 import UserDetails from './components/users/UserDetails'
 import EditUser from './components/users/EditUser'
-
+import Login from './components/auth/Login'
 
 // Import Layouts
 import Layout from './components/layout/Layout';
-import NavigationBar from './components/layout/NavigationBar';
+import AppNavBar from "./components/layout/AppNavBar";
 import Jumbotron from './components/layout/Jumbotron';
 import Footer from './components/layout/Footer';
 
@@ -43,24 +43,24 @@ function App() {
   return (
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <Fragment>
         <Router>
-          <NavigationBar />
+          <AppNavBar />
           <Jumbotron />
           <Styles>
           <Layout>  
               <Container>
                 <Switch>
-                  <Route exact path='/' component={Home}></Route>
-                  <Route exact path='/signup' component={Newsletter}></Route>
-                  <Route exact path='/status' component={Status}></Route>
-                  <Route exact path='/contact' component={Email}></Route>
-                  <Route exact path='/text' component={Sms}></Route>
-                  <Route exact path='/users' component={Users}></Route>
-                  <Route exact path='/users/register' component={Register}></Route>
-                  <Route exact path="/users/:id" component={UserDetails}></Route>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/signup' component={Newsletter} />
+                  <Route exact path='/status' component={Status} />
+                  <Route exact path='/contact' component={Email} />
+                  <Route exact path='/text' component={Sms} />
+                  <Route exact path='/users' component={Users} />
+                  <Route exact path='/users/register' component={Register} />
+                  <Route exact path="/users/:id" component={UserDetails} />
                   <Route exact path="/users/edit/:id" component={EditUser} />
-                  <Route component={NotFound}></Route>
+                  <Route exact path="/login" component={Login} />
+                  <Route component={NotFound} />
                 </Switch>
               </Container>
           </Layout>
@@ -69,8 +69,7 @@ function App() {
           <Footer /> 
           </Styles>
           </Router>
-        </Fragment>
-    </ReactReduxFirebaseProvider>
+      </ReactReduxFirebaseProvider>
     </Provider>
     
   );
