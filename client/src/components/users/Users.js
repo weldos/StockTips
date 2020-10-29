@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'; 
+import { faUsers, faQuestionCircle, faUserPlus } from '@fortawesome/free-solid-svg-icons'; 
 
 //Custom Spinner
 import Spinner from "../layout/Spinner";
@@ -50,8 +50,8 @@ const Users = ({ users }) => {
             </H2>
           </Col>
           <Col md={6}>
-            <Link to="/users/register" className="btn btn-success btn-block">
-              Register new user!
+            <Link to="/users/register" className="btn btn-success btn-block" >
+              <FontAwesomeIcon icon={faUserPlus} /> Register new user!
             </Link>
           </Col>
         </Row>
@@ -75,8 +75,7 @@ const Users = ({ users }) => {
                 <TD>
                   <Link
                     to={`/users/${user.id}`}
-                    className="btn btn-dark text-light"
-                  >
+                    className="btn btn-dark text-light" style={{float: "center"}}>
                     <FontAwesomeIcon icon={faQuestionCircle} size="lg" /> Details
                   </Link>
                 </TD>
