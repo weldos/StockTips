@@ -2,11 +2,11 @@
 
 //Bring in required packages
 import React from 'react';
-import { Nav, Navbar} from 'react-bootstrap';
+import { Button, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import styled from 'styled-components';
 
 //FontAwesome Icon
-import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus  } from '@fortawesome/free-solid-svg-icons'; 
+import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus, faUsers  } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //Styles
@@ -55,7 +55,10 @@ const NavigationBar = props => {
                             <Nav.Link href='/status'><FontAwesomeIcon icon= {faSignal}/>{' '}Server Status</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link href='/register'><FontAwesomeIcon icon={faUserPlus}/>{' '}Register</Nav.Link>
+                            <Nav.Link href='/users'><FontAwesomeIcon icon={faUsers}/>{' '}Users</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link href='/users/register'><FontAwesomeIcon icon={faUserPlus}/>{' '}Register</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link href='/'><FontAwesomeIcon icon={faHome} size = '2x' /></Nav.Link>

@@ -19,7 +19,8 @@ import Status from './components/Status';
 import Newsletter from './components/Newsletter';
 import Email from './components/Email';
 import Sms from './components/Sms';
-import Register from './components/Register';
+import Register from './components/users/Register';
+import Users from './components/users/Users'
 
 
 // Import Layouts
@@ -45,8 +46,7 @@ function App() {
           <NavigationBar />
           <Jumbotron />
           <Styles>
-          <Layout>
-            
+          <Layout>  
               <Container>
                 <Switch>
                   <Route exact path='/' component={Home}></Route>
@@ -54,7 +54,8 @@ function App() {
                   <Route exact path='/status' component={Status}></Route>
                   <Route exact path='/contact' component={Email}></Route>
                   <Route exact path='/text' component={Sms}></Route>
-                  <Route exact path='/register' component={Register}></Route>
+                  <Route exact path='/users' component={Users}></Route>
+                  <Route exact path='/users/register' component={Register}></Route>
                   <Route component={NotFound}></Route>
                 </Switch>
               </Container>
