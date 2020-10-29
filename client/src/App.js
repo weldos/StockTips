@@ -21,6 +21,7 @@ import Email from './components/Email';
 import Sms from './components/Sms';
 import Register from './components/users/Register';
 import Users from './components/users/Users'
+import UserDetails from './components/users/UserDetails'
 
 
 // Import Layouts
@@ -56,6 +57,7 @@ function App() {
                   <Route exact path='/text' component={Sms}></Route>
                   <Route exact path='/users' component={Users}></Route>
                   <Route exact path='/users/register' component={Register}></Route>
+                  <Route exact path="/users/:id" component={UserDetails}></Route>
                   <Route component={NotFound}></Route>
                 </Switch>
               </Container>

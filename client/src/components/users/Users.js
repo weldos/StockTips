@@ -68,7 +68,7 @@ const Users = ({ users }) => {
                 <TD>{user.phone}</TD>
                 <TD>
                   <Link
-                    to={`/client/${user.id}`}
+                    to={`/users/${user.id}`}
                     className="btn btn-secondary text-light"
                   >
                     <FontAwesomeIcon icon={faQuestionCircle} size="lg" /> Details
