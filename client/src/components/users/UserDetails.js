@@ -108,7 +108,7 @@ const UserDetails = (props) => {
           </Col>
           <hr />
 
-          <Card bg="dark">
+          <Card bg="dark" border="success" style={{ width: '45rem' }} >
             <Card.Header>
               <H3>
                 {user.firstName} {user.lastName}
@@ -127,7 +127,6 @@ const UserDetails = (props) => {
               <ListGroup>
                 <ListGroup.Item variant="success"><Strong>Email: </Strong><WhiteStyle>{user.email}</WhiteStyle></ListGroup.Item>
                 <ListGroup.Item variant="success"><Strong>Phone: </Strong><WhiteStyle>{user.phone}</WhiteStyle></ListGroup.Item>
-
               </ListGroup>
             </Card.Body>
           </Card>

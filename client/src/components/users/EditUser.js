@@ -108,7 +108,7 @@ const EditUser = (props) => {
           </Link>
         </Col>
       </Row>
-      <Card bg="dark" text="success">
+      <Card bg="dark" text="success" border="success">
         <Card.Header><LightGreenHeader>Edit User : {firstName}{' '}{lastName}</LightGreenHeader></Card.Header>
         <Card.Body>
           <Form onSubmit={(e) => onSubmit(e)}>
