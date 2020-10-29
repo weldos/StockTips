@@ -1,7 +1,7 @@
 //Import React and Bootstrap components
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Link, useHistory } from "react-router-dom";
-import {Form, InputGroup, Button, FormControl, Row, Col, ButtonGroup, Card, ListGroup} from "react-bootstrap";
+import {Button, Row, Col, ButtonGroup, Card, ListGroup} from "react-bootstrap";
 
 
 //Redux Imports
@@ -12,16 +12,38 @@ import {
   useFirestore,
 } from "react-redux-firebase";
 import { connect } from "react-redux";
-import classnames from "classnames";
 
 
 // Font Awesome and Styling
 import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 // Spinner Component
 import Spinner from "../layout/Spinner";
+
+
+//Styles
+const Span = styled.span`
+    color: white;
+`;
+
+const H3 = styled.h3 `
+    color: lightgreen;
+    font-weight: bold;
+`
+
+const H4 = styled.h4 `
+    color: lightgreen;
+    font-size: 1.3rem;
+`
+const Strong = styled.strong `
+    color: black;
+    font-weight: bold;
+`
+const WhiteStyle = styled.div `
+    color: black;
+`
 
 
 const UserDetails = (props) => {
@@ -39,7 +61,6 @@ const UserDetails = (props) => {
 
   const { users } = props;
 
-  
 
   const onDeleteClick = (e) => {
     // Delete the client from the database
@@ -89,23 +110,23 @@ const UserDetails = (props) => {
 
           <Card bg="dark">
             <Card.Header>
-              <h3>
+              <H3>
                 {user.firstName} {user.lastName}
-              </h3>
+              </H3>
             </Card.Header>
             <Card.Body>
               <Row>
                 <Col md={10} sm={6}>
-                  <h4>
+                  <H4>
                     UserID:{" "}
-                    <span className="text-secondary">{user.id}</span>
-                  </h4>
+                    <Span>{user.id}</Span>
+                  </H4>
                 </Col>
               </Row>
               <hr />
               <ListGroup>
-                <ListGroup.Item variant="light"><strong>Email: </strong>{user.email}</ListGroup.Item>
-                <ListGroup.Item variant="light"><strong>Phone: </strong>{user.phone}</ListGroup.Item>
+                <ListGroup.Item variant="success"><Strong>Email: </Strong><WhiteStyle>{user.email}</WhiteStyle></ListGroup.Item>
+                <ListGroup.Item variant="success"><Strong>Phone: </Strong><WhiteStyle>{user.phone}</WhiteStyle></ListGroup.Item>
 
               </ListGroup>
             </Card.Body>

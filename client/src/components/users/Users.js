@@ -1,5 +1,5 @@
 //Import React and Bootstrap components
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Row, Col, Table } from "react-bootstrap";
@@ -28,6 +28,7 @@ const H2 = styled.h2`
 
 const TH = styled.th`
     color: lightgreen;
+    font-size: 1.2rem;
 `;
 
 const TD = styled.td`
@@ -69,7 +70,7 @@ const Users = ({ users }) => {
                 <TD>
                   <Link
                     to={`/users/${user.id}`}
-                    className="btn btn-secondary text-light"
+                    className="btn btn-dark text-light"
                   >
                     <FontAwesomeIcon icon={faQuestionCircle} size="lg" /> Details
                   </Link>

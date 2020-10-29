@@ -3,9 +3,9 @@
 
 //Bring in required modules/packages
 import React, { Fragment, useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 //import axios from 'axios';
-import { Form, Button, Alert } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import styled from 'styled-components';
 
 //Font Awesome Icons
@@ -45,12 +45,6 @@ const Register = () => {
     password: ''
   });
 
-  //  //Set state for alert
-  //  const [show, setShow ] = useState(false);
-  //  const [alertData, SetAlertData] = useState({
-  //      variant: 'danger',
-  //      alertMessage: ''
-  //  })
 
    // Add in database config and listeners
   const firestore = useFirestore();
@@ -75,36 +69,6 @@ const Register = () => {
           password: ''
           });
 
-//   //function to post    OLD?    
-//   const onSubmit = async e => {
-//     e.preventDefault();
-//     console.log(userDetails);
- 
-//       try {
-//         const res = await axios.post ('/register', {
-//           firstName,
-//           lastName,
-//           email,
-//           phone,
-//           password,
-//         });
-       
-//         //Show out alert
-//         setShow(true);
-//         // set the data for the alert
-//         SetAlertData({ variant:"success", alertMessage: res.data})
-//         console.log(res);
-//         //clearing the state
-//         clearState();
-//         console.log("clearing state...")
-//     } catch (error){
-//         console.log(error);
-//         //Show alert
-//         setShow(true);
-//         //set the data for the alert
-//         SetAlertData({ variant:"danger", alertMessage: error.response.data})
-//     }
-// }
 
 const onSubmit = (e) => {
   e.preventDefault();
