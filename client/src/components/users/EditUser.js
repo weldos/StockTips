@@ -147,8 +147,9 @@ const EditUser = (props) => {
             <Form.Group controlId="phone">
               <Form.Label><LightGreen>Phone:</LightGreen></Form.Label>
               <Form.Control
-                type="text"
+                type="tel"
                 placeholder="Enter your phone number"
+                pattern="[0-9]{10}"
                 name="phone"
                 value={phone}
                 onChange={(e) => onChange(e)}

@@ -83,7 +83,7 @@ const onSubmit = (e) => {
     .then(() => console.log("User added"));
 
   //redirect user back to the dashboard after adding a new client
-  history.push("/");
+  history.push("/users");
 };
 
     
@@ -147,8 +147,8 @@ const onSubmit = (e) => {
             <Form.Group controlId="phone">
             <Form.Label for="phone"><FontAwesomeIcon icon= {faPhone}/>{' '}Phone:</Form.Label>
               <Form.Control
-                type="text"
-                // pattern=""
+                type="tel"
+                pattern="[0-9]{10}"
                 placeholder="Enter your phone number"
                 name="phone"
                 value={phone}
