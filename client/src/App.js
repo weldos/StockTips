@@ -31,7 +31,7 @@ import AppNavBar from "./components/layout/AppNavBar";
 import Jumbotron from './components/layout/Jumbotron';
 import Footer from './components/layout/Footer';
 
-
+import Customer from './components/customer/CustomerData'
 //Styles
 const Styles = styled.div`
       background-color: black;
@@ -60,6 +60,7 @@ function App() {
                   <Route exact path="/users/:id" component={UserDetails} />
                   <Route exact path="/users/edit/:id" component={EditUser} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path='/customers' component={Customer}/>
                   <Route component={NotFound} />
                 </Switch>
               </Container>

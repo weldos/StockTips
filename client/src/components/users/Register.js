@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 //import axios from 'axios';
 import { Form, Button } from 'react-bootstrap'
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
 //Font Awesome Icons
 import { faAt, faSignature, faKey, faPhone } from '@fortawesome/free-solid-svg-icons'; 
@@ -32,12 +33,16 @@ const H2 = styled.h2`
     color: lightgreen;
     font-weight: bold;
 `;
+
  
 //Register class that handles the states
 const Register = () => {
+  
+  const UUID = uuidv4();
 
   //Set state for form
   const [userDetails, setUserDetails ] = useState({
+    userId: UUID,
     firstName: '',
     lastName: '',
     email: '',
@@ -51,8 +56,9 @@ const Register = () => {
   useFirestoreConnect("users");
   const history = useHistory();
 
+
    //Deconstructing the state
-  const { firstName, lastName, email, phone, password } = userDetails;
+  const { userId , firstName, lastName, email, phone, password } = userDetails;
   //const {variant, alertMessage} = alertData;
 
 //function to change the state to input data

@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { withFirestore } from "react-redux-firebase";
 
 //FontAwesome and Styling imports
-import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus, faUsers, faSignInAlt, faSignOutAlt, faUser  } from '@fortawesome/free-solid-svg-icons'; 
+import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus, faUsers, faSignInAlt, faSignOutAlt, faUser, faUserShield, faUserSecret  } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
@@ -57,7 +57,7 @@ const AppNavBar = ({ firebase, auth }) => {
       .catch((error) => console.log(error));
   };
 
-  const title = <span><FontAwesomeIcon icon={faUser}/> Admin Panel</span> 
+  const title = <span><FontAwesomeIcon icon={faUserShield}/> Admin Panel</span> 
 
   // if user is logged in
   const loggedIn = (
@@ -70,6 +70,7 @@ const AppNavBar = ({ firebase, auth }) => {
         <NavDropdown title={title} id="basic-nav-dropdown">
           <NavDropdown.Item href='/users'><FontAwesomeIcon icon={faUsers}/>{' '}All Users</NavDropdown.Item>
           <NavDropdown.Item href='/users/register'><FontAwesomeIcon icon={faUserPlus}/>{' '}Register</NavDropdown.Item>
+          <NavDropdown.Item href='/customers'><FontAwesomeIcon icon={faUserSecret}/>{' '}Customers</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item eventKey="disabled" disabled>{auth.email}</NavDropdown.Item>
           <NavDropdown.Item href="#!" onClick={(e) => logOut(encodeURIComponent)}><FontAwesomeIcon icon={faSignOutAlt}/>{' '}Logout</NavDropdown.Item>

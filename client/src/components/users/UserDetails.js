@@ -74,6 +74,20 @@ const UserDetails = (props) => {
   };
 
 
+  const deleteID = (e, id) => {
+    // Delete the client from the database
+    firestore
+      .collection("users")
+      .doc(id)
+      .update({
+        userId: firestore.FieldValue.delete()
+      })
+      .then(() => console.log("User ID Deleted"));
+    // Redirect back to dashboard
+    history.push("/users");
+  };
+
+
   if (!users) {
     return <Spinner />;
   } else {
@@ -119,7 +133,15 @@ const UserDetails = (props) => {
                 <Col md={10} sm={6}>
                   <H4>
                     UserID:{" "}
-                    <Span>{user.id}</Span>
+                    {user.userId ? ( 
+                      <div>
+                        <Span>{user.userId}</Span> 
+                        <br />
+                        <br />
+                        <Button className="btn btn-warning" onClick={(e) => deleteID(e, id)}>Delete ID</Button>   
+                      </div>
+                      ) : ( <Span>ID Not found</Span> )
+                     }
                   </H4>
                 </Col>
               </Row>
