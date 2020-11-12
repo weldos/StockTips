@@ -78,13 +78,13 @@ const Home = () => {
             <TradingViewWidget expand="lg"
                 // Settings
                 symbol="XJO"  
-                theme="DARK" 
+                theme="Dark" 
                 timezone="Australia/Sydney" 
-                range="YTD" 
-                height="600"
-                width="900" 
-                show_popup_button="true"
-                withdateranges="true"
+                range="ytd" 
+                height={600}
+                width={900} 
+                show_popup_button={true}
+                withdateranges={true}
             /> 
             </div>
         </Styles>

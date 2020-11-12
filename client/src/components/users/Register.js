@@ -58,7 +58,7 @@ const Register = () => {
 
 
    //Deconstructing the state
-  const { userId , firstName, lastName, email, phone, password } = userDetails;
+  const { firstName, lastName, email, phone, password } = userDetails;
   //const {variant, alertMessage} = alertData;
 
 //function to change the state to input data

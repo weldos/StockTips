@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { withFirestore } from "react-redux-firebase";
 
 //FontAwesome and Styling imports
-import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus, faUsers, faSignInAlt, faSignOutAlt, faUser, faUserShield, faUserSecret  } from '@fortawesome/free-solid-svg-icons'; 
+import { faCommentDollar, faSignal, faHome, faNewspaper, faSms, faEnvelopeOpenText, faUserPlus, faUsers, faSignInAlt, faSignOutAlt, faUserShield, faUserSecret  } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
