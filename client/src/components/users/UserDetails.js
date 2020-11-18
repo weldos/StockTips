@@ -138,9 +138,9 @@ const UserDetails = (props) => {
                         <Span>{user.userId}</Span> 
                         <br />
                         <br />
-                        <Button className="btn btn-warning" onClick={(e) => deleteID(e, id)}>Delete ID</Button>   
+                        <Button className="btn btn-warning" onClick={(e) => deleteID(e, id)}>Delete UUID</Button>   
                       </div>
-                      ) : ( <Span>ID Not found</Span> )
+                      ) : ( <Span>{user.id} ( UUID NOT FOUND ) </Span> )
                      }
                   </H4>
                 </Col>
