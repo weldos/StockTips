@@ -18,12 +18,12 @@ const Styles = styled.div`
 ` 
 const ServerMessage = styled.h2`
     color: lightgreen;
-    font-size: 3rem;
+    font-size: 2rem;
 `
 
 const H3 = styled.h3`
     color: lightgreen;
-    font-size: 2rem;
+    font-size: 3rem;
 `
 
 const Status = () => {

@@ -36,7 +36,7 @@ class CustomerData extends Component {
     const res = await jQuery.get('https://jsonplaceholder.typicode.com/users', function(data){
       })
       console.log(res)
-      this.setState({users: res, })  
+      this.setState({users: res })  
   }
 
 
@@ -45,7 +45,7 @@ class CustomerData extends Component {
   return (
  <div>
     <H2>Dummy User Data</H2>
-    {!users ? (<Spinner />) : ( 
+    {users == "" ? (<Spinner />) : ( 
 
     <Table striped>
           <thead className="thead-inverse">
