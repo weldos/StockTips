@@ -59,7 +59,6 @@ const Register = () => {
 
    //Deconstructing the state
   const { firstName, lastName, email, phone, password } = userDetails;
-  //const {variant, alertMessage} = alertData;
 
 //function to change the state to input data
   const onChange = e => setUserDetails(
@@ -99,21 +98,6 @@ const onSubmit = (e) => {
       <Styles className="App">
       <H2>Register!</H2>
               <p className="lead">Please use this form to register with us as a user. We would love to have you onboard! </p>
-
-              {/* {
-                show === true ? 
-                (
-                    <Alert className='mt-5' variant={variant} onClose={() => setShow(false)} dismissible>
-                        <Alert.Heading>
-                            {variant === 'success' ? 'Success!' : 'Oops....Something went wrong!'}
-                            <p>
-                                {alertMessage}
-                            </p>
-                        </Alert.Heading>
-                    </Alert>
-                ) :null
-            } */}
-      
           
           <Form onSubmit={e => onSubmit(e)}>
             <Form.Group controlId="firstName">

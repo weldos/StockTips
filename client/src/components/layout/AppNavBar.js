@@ -90,25 +90,6 @@ const AppNavBar = ({ firebase, auth }) => {
   </Fragment>
   );
 
-  //  // if user is logged in
-  //  const loggedIn = (
-  //   <Fragment>
-  //     <Nav.Link href="/">Dashboard</Nav.Link>
-  //     <Nav.Link href="/#!">{auth.email}</Nav.Link>
-  //     <Nav.Link href="/#!" onClick={(e) => logOut(encodeURIComponent)}>
-  //       Logout
-  //     </Nav.Link>
-  //   </Fragment>
-  // );
-
-  // // if user is logged Out
-  // const loggedOut = (
-  //   <Fragment>
-  //     <Nav.Link href="/login">Login</Nav.Link>
-  //     <Nav.Link href="/register">Register</Nav.Link>
-  //   </Fragment>
-  // );
-
   return (
     <Styles>
       <Navbar expand="lg">   
