@@ -33,8 +33,7 @@ class CustomerData extends Component {
   }
 
   async componentDidMount(){
-    const res = await jQuery.get('https://jsonplaceholder.typicode.com/users', function(data){
-      })
+    const res = await jQuery.get('https://jsonplaceholder.typicode.com/users')
       console.log(res)
       this.setState({users: res })  
   }
@@ -44,7 +43,7 @@ class CustomerData extends Component {
     const {users} = this.state 
   return (
  <div>
-    <H2>Dummy User Data</H2>
+    <H2>Secret Customer Data</H2>
     {users == "" ? (<Spinner />) : ( 
 
     <Table striped>
