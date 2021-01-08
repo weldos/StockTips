@@ -42,10 +42,10 @@ router.post('/', (req, res) => {
     
     //our mailchimp api url and authorisation code
     const options = {
-      url: 'https://us8.api.mailchimp.com/3.0/lists/bfc7545846',
+      url: process.env.MAILCHIMPLISTURL,
       method: 'POST',
       headers: {
-        Authorization: 'auth 4bbe9258a79f3d1a54581e38cffe1888-us8'
+        Authorization: process.env.MAILCHIMPAUTH
       },
       body: postData
     }
