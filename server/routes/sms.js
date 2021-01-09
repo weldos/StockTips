@@ -10,8 +10,8 @@ const router = express.Router();
 
 //Init Nexmo
 const nexmo = new Nexmo({
-    apiKey: 'fe959eb0',
-    apiSecret: 'u3EFKrcmsazsT7v0'
+    apiKey: process.env.NEXMOAPIKEY,
+    apiSecret: process.env.NEXMOAPISECRET
 }, {debug: true});
 
 
@@ -43,14 +43,14 @@ router.post('/', (req, res) => {
                 res.status(500).send('An Error has occurred');
                 return console.log('Errors: ', error);
             } else {
-                console.log("Message sent successfuly");
+                console.log("Message sent successfully");
                 // Get data from response
                 const data = {
                     id: responseData.messages[0]['message-id'],
                     number: responseData.messages[0]['to']
                 }
                 console.log(data)
-                res.status(200).send('The SMS was successfuly sent')
+                res.status(200).send('The SMS was successfully sent')
 
                 
             }

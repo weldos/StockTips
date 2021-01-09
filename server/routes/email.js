@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
     //Step 2 - Create Mail Options
     let mailOptions = {
         from: process.env.EMAIL, //senders adress
-        to: 'nickw2709@gmail.com', //recievers address
+        to: process.env.EMAILTO, //recievers address
         subject: 'Node contact request',
         html: output
     }
