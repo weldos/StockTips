@@ -4,7 +4,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container } from "react-bootstrap";
 
 // Redux Imports
 import { Provider } from "react-redux";
@@ -48,7 +47,6 @@ function App() {
           <Jumbotron />
           <Styles>
           <Layout>  
-              <Container>
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/signup' component={Newsletter} />
@@ -63,7 +61,6 @@ function App() {
                   <Route exact path='/customers' component={Customer}/>
                   <Route component={NotFound} />
                 </Switch>
-              </Container>
           </Layout>
           <br />
           <br />
